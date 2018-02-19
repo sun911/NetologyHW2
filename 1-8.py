@@ -1,1 +1,3 @@
-new = 123
+import requests
+
+response = requests.get()
