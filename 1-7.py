@@ -30,6 +30,7 @@ class Birds(FarmAnimals):
         return str(
             dict(kind=self.kind, color=self.color, size=self.size, age=self.age, gender=self.gender, eggs=self.eggs))
 
+
 cow = Animals('Cow', 'white', 'big', 10, 'yes', 'yes')
 print(cow)
 goat = Animals('Goat', 'grey', 'medium', 5, 'no', 'yes')
