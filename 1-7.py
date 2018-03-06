@@ -9,7 +9,16 @@ class FarmAnimals():
         return str(dict(name=self.name, color=self.color, size=self.size, age=self.age))
 
 
-class Cows(FarmAnimals):
+class Animals(FarmAnimals):
+    legs = 4
+
+
+class Birds(FarmAnimals):
+    legs = 2
+    wings = 2
+
+
+class Cows(Animals):
     def __init__(self, name, color, size, age, milk):
         super().__init__(name, color, size, age)
         self.milk = milk
@@ -19,7 +28,7 @@ class Cows(FarmAnimals):
             dict(name=self.name, color=self.color, size=self.size, age=self.age, milk=self.milk))
 
 
-class Goats(FarmAnimals):
+class Goats(Animals):
     def __init__(self, name, color, size, age, horns):
         super().__init__(name, color, size, age)
         self.horns = horns
@@ -29,7 +38,7 @@ class Goats(FarmAnimals):
             dict(name=self.name, color=self.color, size=self.size, age=self.age, horns=self.horns))
 
 
-class Sheep(FarmAnimals):
+class Sheep(Animals):
     def __init__(self, name, color, size, age, wool):
         super().__init__(name, color, size, age)
         self.wool = wool
@@ -39,7 +48,7 @@ class Sheep(FarmAnimals):
             dict(name=self.name, color=self.color, size=self.size, age=self.age, wool=self.wool))
 
 
-class Pigs(FarmAnimals):
+class Pigs(Animals):
     def __init__(self, name, color, size, age, meat):
         super().__init__(name, color, size, age)
         self.meat = meat
@@ -49,7 +58,7 @@ class Pigs(FarmAnimals):
             dict(name=self.name, color=self.color, size=self.size, age=self.age, meat=self.meat))
 
 
-class Ducks(FarmAnimals):
+class Ducks(Birds):
     def __init__(self, name, color, size, age, feather):
         super().__init__(name, color, size, age)
         self.feather = feather
@@ -59,7 +68,7 @@ class Ducks(FarmAnimals):
             dict(name=self.name, color=self.color, size=self.size, age=self.age, feather=self.feather))
 
 
-class Chicken(FarmAnimals):
+class Chicken(Birds):
     def __init__(self, name, color, size, age, eggs):
         super().__init__(name, color, size, age)
         self.eggs = eggs
@@ -69,7 +78,7 @@ class Chicken(FarmAnimals):
             dict(name=self.name, color=self.color, size=self.size, age=self.age, eggs=self.eggs))
 
 
-class Geese(FarmAnimals):
+class Geese(Birds):
     def __init__(self, name, color, size, age, fluff):
         super().__init__(name, color, size, age)
         self.fluff = fluff
@@ -95,3 +104,4 @@ goose = Geese('Vasya', 'white', 'little', 4, 'yes')
 print(goose)
 goose1 = Geese('Venya', 'white', 'little', 2, 'no')
 print(goose1)
+print('У', goose1.name, goose1.wings, 'крыла.')
