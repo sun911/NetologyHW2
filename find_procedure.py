@@ -61,14 +61,17 @@ def decode_files(file_name):
 
 def search_in_files(sql_list):
     while True:
-        search_string = input('Введите строку: ').lower()
-        containing_files = [file_name for file_name in sql_list if search_string in decode_files(file_name)]
-        print('\n'.join(containing_files))
+        search = input('Введите строку: ').lower()
+        containing_files = list()
+        for file_name in sql_list:
+            if search in decode_files(file_name):
+                containing_files.append(file_name)
+                with open(os.path.join(current_dir, migrations, file_name), 'r') as f:
+                    sql_text = f.read().lower()
+                    print(file_name, 'встречается', sql_text.count(search))
         print('Всего: {}'.format(len(containing_files)))
         sql_list = containing_files
 
 
 if __name__ == '__main__':
     search_in_files(get_sql_list())
-
-    pass
